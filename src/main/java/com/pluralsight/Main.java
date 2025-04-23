@@ -7,11 +7,14 @@ public class Main {
     // It's private bc there is no reason for us to use it outside of main
     private static Scanner scanner = new Scanner(System.in);
 
+    // private static Console console = new Console(System.in); - if you want to use Console as helper function
+
     public static void main(String[] args) {
 
         Book[] books = getPopulatedBooks();
 
-        ShowScreenHome(books);
+
+        showScreenHome(books);
 
     }
 
@@ -43,7 +46,7 @@ public class Main {
         return library;
     }
 
-    private static void ShowScreenHome(Book[] books) {
+    private static void showScreenHome(Book[] books) {
 
         String homeScreenPrompt = "Welcome to the library!\n" +
                 "Please select an option from the following:\n" +
@@ -61,11 +64,11 @@ public class Main {
 
 
             if (option == 1){
-                ShowScreenAvailableBooks(books);
+                showScreenAvailableBooks(books);
             }
 
             else if (option == 2) {
-                ShowScreenCheckedOutBooks(books);
+                showScreenCheckedOutBooks(books);
             }
 
             else if (option == 0){
@@ -80,7 +83,7 @@ public class Main {
 
     }
 
-    private static void ShowScreenAvailableBooks(Book[] books) {
+    private static void showScreenAvailableBooks(Book[] books) {
 
         // Displays a list of all books that are not currently checked out
 
@@ -116,7 +119,7 @@ public class Main {
 
     }
 
-    private static void ShowScreenCheckedOutBooks(Book[] books) {
+    private static void showScreenCheckedOutBooks(Book[] books) {
 
         // Displays a list of all books that are currently checked out
 
@@ -148,7 +151,7 @@ public class Main {
         }
     }
 
-    private static void CheckInBook(Book[] books){
+    private static void checkInBook(Book[] books){
 
         System.out.println("What is the ID of the book you'd like to check in?");
         int bookId = scanner.nextInt();

@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.sql.SQLOutput;
+
 public class Book {
 
     private int id;
@@ -65,6 +67,11 @@ public class Book {
     public void checkIn(){
         this.isCheckedOut = false;
         this.checkedOutTo = "";          // "" (blank string) works & Null works -- since no one checked out the book
+    }
+
+
+    public String getFormattedBookText(){
+        return String.format("%5d %-51s %21s", this.id, this.title, this.isbn);
     }
 
 
